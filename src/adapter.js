@@ -12,6 +12,9 @@ class Adapter {
       const imageContainer = document.getElementById('image')
       imageContainer.src = myImage.render()
       likesCount.innerText = myImage.likes
+      commentStore = []
+      myImage.comments.map(comment=>{new Comment(comment.content, comment.image_id)})
+      commentContainer.innerHTML = commentStore.map(comment=>comment.render()).join("")
     })
   }
 
