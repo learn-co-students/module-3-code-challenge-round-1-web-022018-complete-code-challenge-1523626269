@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //have to still clear out the comment field, below isn't cutting it
       commentText = ""
       adapter.postComment(newComment)
-      adapter.getImage(imageURL)
+      // adapter.getImage(imageURL)
     }
   })
 
