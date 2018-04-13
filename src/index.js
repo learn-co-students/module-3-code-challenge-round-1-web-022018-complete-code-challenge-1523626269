@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body:{
+      body:JSON.stringify({
         image_id: 8
-      }
+      })
     })
   }
 
