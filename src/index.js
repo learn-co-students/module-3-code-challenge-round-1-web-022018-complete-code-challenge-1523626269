@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
       let commentText = document.getElementById('comment_input').value
       let newComment = new Comment(commentText, imageId)
       commentContainer.innerHTML += newComment.render()
-      //have to still clear out the comment field, below isn't cutting it
-      commentText = ""
+      //can refactor below in a minute
+      document.getElementById('comment_input').value = ""
       adapter.postComment(newComment)
       // adapter.getImage(imageURL)
     }
