@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const imageContainer = document.getElementById('image')
   const likeURL = `https://randopic.herokuapp.com/likes/`
   const commentsURL = `https://randopic.herokuapp.com/comments/`
+  commentContainer = document.getElementById('comments')
   likesCount = document.getElementById('likes')
-  myImage = new Image
+  // myImage = new Image
 
   const adapter = new Adapter
 
@@ -20,7 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
       let targetImage = store.find(image=>image.id===imageId)
       console.log(targetImage.likes)
       // likesCount.innerText = targetImage.likes
-    } 
+    } else if (e.target.type==="submit"){
+      let commentText = document.getElementById('comment_input').value
+      let newComment = new Comment(commentText, imageId)
+      commentContainer.innerHTML += newComment.render()
+      //have to still clear out the comment field, below isn't cutting it
+      commentText = ""
+      adapter.postComment(newComment)
+    }
   })
 
 

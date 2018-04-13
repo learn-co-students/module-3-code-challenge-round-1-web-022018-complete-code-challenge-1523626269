@@ -28,4 +28,15 @@ class Adapter {
     //   body: JSON.stringify({'like_count':'like_count+1'})
     // })
   }
+
+  //this saves it to the database after the comment is created in index.js
+  postComment(comment){
+    let imageId = comment.imageId
+    let content = comment.commentText
+    fetch('https://randopic.herokuapp.com/comments', {
+      headers: {'Content-Type':'application/json'},
+      method: 'post',
+      body: JSON.stringify({image_id:imageId, content:content})
+    })
+  }
 }
