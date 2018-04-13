@@ -37,6 +37,7 @@ like.addEventListener('click', function(event) {
   let likes = document.getElementById('likes')
   let number = parseInt(document.getElementById('likes').innerText);
   document.getElementById('likes').innerText = (number += 1)
+
   fetch("https://randopic.herokuapp.com/likes/",
   {method: "POST",
   headers: {'Accept': 'application/json','Content-Type': 'application/json'},
