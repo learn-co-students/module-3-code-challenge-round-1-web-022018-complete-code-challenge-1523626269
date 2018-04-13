@@ -10,6 +10,8 @@ class Adapter {
     }).then(r=>r.json()).then(json=>{
       let myImage = new Image(json.id, json.url, json.name, json.comments, json.like_count)
       const imageContainer = document.getElementById('image')
+      const imageName = document.getElementById('name')
+      imageName.innerText = myImage.name
       imageContainer.src = myImage.render()
       likesCount.innerText = myImage.likes
       commentStore = []

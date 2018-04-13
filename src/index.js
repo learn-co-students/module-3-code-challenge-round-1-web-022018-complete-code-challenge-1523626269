@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const imageContainer = document.getElementById('image')
   const likeURL = `https://randopic.herokuapp.com/likes/`
   const commentsURL = `https://randopic.herokuapp.com/comments/`
+  //have to fix these scoping issues
   commentContainer = document.getElementById('comments')
   likesCount = document.getElementById('likes')
   // myImage = new Image
