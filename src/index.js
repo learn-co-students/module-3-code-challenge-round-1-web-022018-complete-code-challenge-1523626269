@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateLikes(){
     console.log("updateLikes");
     //post
-    fetch("https://randopic.herokuapp.com/likes",{
+    // fetch("https://randopic.herokuapp.com/likes",{
+    fetch(likeURL,{
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -107,8 +108,22 @@ document.addEventListener('DOMContentLoaded', function() {
         image_id: 4,
         content: text
       })
-    }).then(res=>res.json()).then(json=>console.log(json))
-    console.log(bossImage);
+    }).then(res=>res.json()).then(json=>updatePageComment(json))
+
+    //update comment to page
+
+  }
+  function updatePageComment(json){
+      // console.log(bossImage);
+    let newcomment = bossImage.comments.slice(-1)[0]
+    // arr.slice(-1)[0]
+    // console.log("start updatePageComment");
+    // console.log(newcomment);
+    // console.log("end updatePageComment");
+    commenthtml=document.querySelector("#comments")
+    let li = `<li>${newcomment.content}</li>`
+    // commenthtml.appendChild(li) //have to make via node first
+    commenthtml.innerHTML += li
   }
 
   //////////////////////////////////////////////////////////////////////////////call functions
