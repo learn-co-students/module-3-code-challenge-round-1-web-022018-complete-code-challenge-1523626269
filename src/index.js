@@ -27,7 +27,8 @@ function display(json) {
       fetch('https://randopic.herokuapp.com/comments/', {
       method:"POST",
       headers: { Accept: 'application/json', 'Content-Type': 'application/json'},
-      body: JSON.stringify({content: document.getElementById('comment_input').value, image_id: json.id})}).then(document.getElementById('comments').innerHTML += `<li>${document.getElementById('comment_input').value}</li>`)
+      body: JSON.stringify({content: document.getElementById('comment_input').value, image_id: json.id})})
+      .then(document.getElementById('comments').innerHTML += `<li>${document.getElementById('comment_input').value}</li>`)
       document.getElementById('comment_input').value = ''
     }
   }
