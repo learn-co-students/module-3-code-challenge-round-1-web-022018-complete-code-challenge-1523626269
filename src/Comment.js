@@ -1,8 +1,8 @@
 class Comment {
-  constructor(comment) {
-  this.comment = comment;
-  this.id = comment.id;
+  constructor(id, content) {
+  this.id = id;
+  this.content = content;
 
-  Comment.all.push(this);
 }
+
 }
