@@ -22,7 +22,7 @@ function display(json) {
     .then(document.getElementById('likes').innerHTML = parseInt(document.getElementById('likes').innerHTML) + 1)
   }
 
-  function comment(x) {
+  function comment() {
     if (document.getElementById('comment_input').value != '' ) {
       fetch('https://randopic.herokuapp.com/comments/', {
       method:"POST",
